@@ -16,6 +16,8 @@ class Order extends Migration
         Schema::create('Orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('userid');
+            $table->string('name');
+            $table->string('phone');
             $table->integer('staffid');
             $table->string('address');
             $table->string('total');

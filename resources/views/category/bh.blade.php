@@ -1,4 +1,7 @@
-
+@extends('layouts.master')
+<br><br><br>
+@section('content')
+    
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -15,10 +18,10 @@
             <div class="col-md-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs">
-                    <li class="nav-item active">
-                        <a class="nav-link " href="{{route('home')}}">Home</a>
-                    </li>
                     <li class="nav-item">
+                        <a class="nav-link "  href="{{route('home')}}">Home</a>
+                    </li>
+                    <li class="nav-item active">
                         <a class="nav-link"  href="{{route('bh')}}">Bó hoa</a>
                     </li>
                     <li class="nav-item">
@@ -29,7 +32,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="row" style="float:left">
             @foreach ($product as $item)
             <div class="col-md-4">
                 <div class="h-75">
@@ -42,9 +44,9 @@
                     <button type="button" data-id="{{$item->id}}" class="btn btn-success btnAdd">Thêm giỏ hàng</button>
                 </div>
             </div>
+    
         
         @endforeach
-    </div>
         <br>
         <div class="col-md-12 text-center">
             {{ $product->links()}}
@@ -54,3 +56,4 @@
     </div>
 </div>
 <br>
+@endsection

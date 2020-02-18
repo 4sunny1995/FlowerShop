@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Users;
 
 class UserController extends Controller
 {
@@ -37,5 +38,14 @@ class UserController extends Controller
     public function detail(){
         $user=Auth::user();
         return view('profile',compact('user'));
+    }
+    public function changePassword(Request $request){
+        $id=Auth::user()->id;
+        $user=User::find($id);
+        if($user){
+            $user->password=$request->password;
+            $user->save();
+            return back()->with('success','Thay đổi mật khẩu thành công');
+        }
     }
 }

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="stylesheet" href="/css/mycss.css">
 </head>
 
 <body>
@@ -79,6 +80,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox-plus-jquery.min.js"></script>
     <script src="/js/myjs.js"></script>
+    <script src="/js/tab.js"></script>
+
 </body>
 
 </html>

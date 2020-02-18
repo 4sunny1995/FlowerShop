@@ -28,4 +28,22 @@ class HomeController extends Controller
         $product=Product::paginate(9); 
         return view('home',compact('product'));
     }
+    public function getBH()
+    {
+        // if($category=='bh')
+        $product=Product::where('productcode','BH')->paginate(9);
+        return view('category.bh',compact('product')); 
+    }
+    public function getCH()
+    {
+        // if($category=='bh')
+        $product=Product::where('productcode','CH')->paginate(9);
+        return view('category.ch',compact('product')); 
+    }
+    public function getLH()
+    {
+        // if($category=='bh')
+        $product=Product::where('productcode','LH')->paginate(9);
+        return view('category.lh',compact('product')); 
+    }
 }

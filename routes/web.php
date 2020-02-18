@@ -27,4 +27,12 @@ Route::get('/changePassword','UserController@changePassword')->name('changePassw
 Route::get('/history','OrderController@index')->name('history');
 Route::get('/redirect/{social}', 'SocialAuthController@redirect');
 Route::get('/callback/{social}', 'SocialAuthController@callback');
+//tab
+// Route::get('/{category}','HomeController@getByCategory')->name('category');
+Route::group(['prefix' => 'products'], function () {
+    Route::get('bh','HomeController@getBH')->name('bh');
+    Route::get('ch','HomeController@getCH')->name('ch');
+    Route::get('lh','HomeController@getLH')->name('lh');
+
+});
 // Route::post('/login/{social}', );

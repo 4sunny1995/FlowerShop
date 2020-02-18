@@ -1,4 +1,7 @@
-
+@extends('layouts.master')
+<br><br><br>
+@section('content')
+    
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -15,36 +18,34 @@
             <div class="col-md-12">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs">
-                    <li class="nav-item active">
-                        <a class="nav-link " href="{{route('home')}}">Home</a>
-                    </li>
                     <li class="nav-item">
+                        <a class="nav-link "  href="{{route('home')}}">Home</a>
+                    </li>
+                    <li class="nav-item ">
                         <a class="nav-link"  href="{{route('bh')}}">Bó hoa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('ch')}}">Chậu hoa</a>
+                        <a class="nav-link"  href="{{route('ch')}}">Chậu hoa</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link"  href="{{route('lh')}}">Lẵng hoa</a>
                     </li>
                 </ul>
             </div>
-            <div class="row" style="float:left">
             @foreach ($product as $item)
             <div class="col-md-4">
-                <div class="h-75">
-                <img src="/assets/img/{{$item->productcode}}/{{$item->image}}" class="img-thumbnail" alt="Cinque Terre">
-                </div>
-                <div class="h-25 text-center border ">
-                    <span>{{$item->name}}</span><br>
-                <span>Giá cũ: </span><del style="color:red">{{$item->price}} VNĐ</del><br>
-                    <span>Giá mới: </span><span>{{$item->promotionprice}} VNĐ</span><br>
-                    <button type="button" data-id="{{$item->id}}" class="btn btn-success btnAdd">Thêm giỏ hàng</button>
-                </div>
+            <div class="h-75">
+            <img src="/assets/img/{{$item->productcode}}/{{$item->image}}" class="img-thumbnail" alt="Cinque Terre">
             </div>
+            <div class="h-25 text-center border ">
+                <span>{{$item->name}}</span><br>
+            <span>Giá cũ: </span><del style="color:red">{{$item->price}} VNĐ</del><br>
+                <span>Giá mới: </span><span>{{$item->promotionprice}} VNĐ</span><br>
+                <button type="button" data-id="{{$item->id}}" class="btn btn-success btnAdd">Thêm giỏ hàng</button>
+            </div>
+        </div>
         
         @endforeach
-    </div>
         <br>
         <div class="col-md-12 text-center">
             {{ $product->links()}}
@@ -54,3 +55,4 @@
     </div>
 </div>
 <br>
+@endsection

@@ -11,16 +11,17 @@ $(document).ready(function(){
         });
         $.ajax({
             url: "/AddItem",
-            data: { productID: id, quantity: 1 },
+            data: { 'productID': id, 'quantity': 1 },
             type: "POST",
             dataType: "Json",
             success: function (data) {
                 alert("Thêm thành công");
-                $('"#' + id + '"').css("display", "block");
+                // $('"#' + id + '"').css("display", "block");
 
                 
             },
             error: function (err) {
+                // alert(data),
                 alert("Có lỗi xảy ra " + err.statusText);
             }
         });

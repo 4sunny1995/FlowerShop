@@ -19,6 +19,8 @@ class orders extends Seeder
             DB ::table('orders')->insert([
                 'total'=>'100000',
                 'userid'=>rand(1,30),
+                'name'=>$faker->name,
+                'phone'=>$faker->phoneNumber,
                 'staffid'=>rand(1,10),
                 'status'=>$faker->randomElement([0,1,2,-1]),
                 'address'=>$faker->address
